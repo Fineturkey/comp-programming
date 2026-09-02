@@ -11,9 +11,9 @@ int main()
 
     cin >> n, b, m;
 
-    vector<vector<int>> friends(n + 1, (vector<int>(n + 1, 0)));
-    vector<bool> vistited(n + 1);
-    vector<bool> hasBoat(n + 1);
+    vector<vector<bool>> friends(n + 1, (vector<bool>(n + 1, false)));
+    vector<bool> hasBoat(n + 1, false);
+    vector<bool> visited(n + 1, false); 
 
     for (int i = 0; i < b; i++) {
         int t;
@@ -27,9 +27,20 @@ int main()
 
         cin >> x >> y;
 
-        friends[x][y] = 1;
+        friends[x][y] = true;
+    }
+
+    for(int i = 0; i < b; i++) {
+        if(hasBoat[i] == true) {
+            for(int j = 0; j < n; j++) {
+                if(friends[i][j] == true) {
+                    friends[i][j] = false;
+                }
+            }
+        }
     }
 }
+
 
 // okay this is a graph problem
 
