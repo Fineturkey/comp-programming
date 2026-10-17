@@ -1,3 +1,9 @@
+/*********************
+ * Binary search to figure out the first occurance when the weight works
+ * Wait to pair each heavy pair and then continue on
+ * if we get cause return false
+ ********************/
+
 #include <algorithm>
 #include <iostream>
 #include <vector>
